@@ -149,7 +149,9 @@ def update_ball():
     ball.actor.x = ball.x
     ball.actor.y = ball.y
 
-
+def on_mouse_move(pos):
+    x = pos[0]
+    paddle.actor.x = x
 
 coloured_box_list = ["element_blue_rectangle_glossy.png", "element_green_rectangle_glossy.png","element_red_rectangle_glossy.png"]
 #coloured_box_list = ["element_blue_rectangle_glossy.png"]
