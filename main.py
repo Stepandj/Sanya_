@@ -118,10 +118,6 @@ def place_hearts(x,y,image):
 
 def update():
     global ball_x_speed, ball_y_speed, hearts
-    if keyboard.left:
-        paddle.x = paddle.x - 5
-    if keyboard.right:
-        paddle.x = paddle.x + 5
     update_ball()
     for bar in bars_list:
         if ball.colliderect(bar):
@@ -152,6 +148,8 @@ def update_ball():
         heart_list.remove(heart_list[len(heart_list)-1])
     ball.actor.x = ball.x
     ball.actor.y = ball.y
+
+
 
 coloured_box_list = ["element_blue_rectangle_glossy.png", "element_green_rectangle_glossy.png","element_red_rectangle_glossy.png"]
 #coloured_box_list = ["element_blue_rectangle_glossy.png"]
