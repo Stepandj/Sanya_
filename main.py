@@ -73,8 +73,8 @@ class Heart():
     def draw(self):
         self.actor.draw()
 
-paddle = Paddle("paddleblue.png", START_PADDLE_X, START_PADDLE_Y)
-ball = Ball("ballblue.png", START_BALL_X, START_BALL_Y)
+paddle = Paddle('paddleblue.png', START_PADDLE_X, START_PADDLE_Y)
+ball = Ball('ballblue.png', START_BALL_X, START_BALL_Y)
 
 ball_x_speed = START_SPEED
 ball_y_speed = START_SPEED
