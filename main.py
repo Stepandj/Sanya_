@@ -10,7 +10,8 @@ START_PADDLE_X = 120
 START_PADDLE_Y = 420
 AMOUND_BLOCKS = 8
 MAX_HEARTS = 3
-
+WHITE = 240, 255, 255
+t = 0
 class Paddle():
     def __init__(self,image,x,y):
         actor = Actor(image)
@@ -88,9 +89,10 @@ def draw():
         screen.blit("win.png", (0, 0))
     elif hearts <= 0:
         screen.clear()
-        screen.blit("gameover.png", (0, 0))
+        screen.blit("gameover.png", (50, 30))
     else:
         screen.blit("background.png", (0, 0))
+        screen.draw.text("Score – "+str(score), (650,20), fontsize=40, color=WHITE)
         paddle.draw()
         ball.draw()
         for bar in bars_list:
@@ -115,14 +117,16 @@ def place_hearts(x,y,image):
         heart_x += 70
         heart_list.append(heart)
 
-
+score = 0
 def update():
-    global ball_x_speed, ball_y_speed, hearts
+    global score, ball_x_speed, ball_y_speed, hearts
     update_ball()
     for bar in bars_list:
         if ball.colliderect(bar):
             bars_list.remove(bar)
             ball_y_speed *= -1
+            score += 1
+
     if paddle.colliderect(ball):
         ball_y_speed *= -1
         #ball_x_speed *= -1
